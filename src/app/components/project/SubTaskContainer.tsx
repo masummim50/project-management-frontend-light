@@ -3,7 +3,7 @@ import {
   Box,
   TextField,
   InputAdornment,
-  ThemeProvider,
+  
   LinearProgress,
   Button,
 } from "@mui/material";
@@ -14,8 +14,6 @@ import { useLocation, useParams } from "react-router-dom";
 import { useCreateSubTaskMutation } from "../../redux/features/subtask/subtaskApi";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { formColor } from "../../lib/muiFormColor";
-import { whiteInputTheme } from "../TestingPage";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useGetPersonalProjectByIdQuery } from "../../redux/features/project/project.api";
 import SubtaskSortButtons from "./SubtaskSortButtons";

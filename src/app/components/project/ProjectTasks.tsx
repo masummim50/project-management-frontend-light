@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import { Box, Button, TextField, ThemeProvider } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import TaskCard from "./TaskCard";
 import { projectType, taskType } from "./project.interface";
 import { useAddNewTaskMutation } from "../../redux/features/task/taskApi";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { whiteInput } from "../../lib/muiFormColor";
-import { whiteInputTheme } from "../TestingPage";
 import NoItemFound from "./NoItemFound";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { blueGrey } from "@mui/material/colors";

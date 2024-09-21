@@ -5,7 +5,6 @@ import {
   Card,
   Typography,
   Box,
-  IconButton,
   ButtonGroup,
   Chip,
   Button,
@@ -18,7 +17,7 @@ import {
 } from "../../redux/features/project/project.api";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useLocation, useNavigate } from "react-router-dom";
-import { blue, green, deepOrange, blueGrey } from "@mui/material/colors";
+import {  blueGrey } from "@mui/material/colors";
 import Divider from "@mui/material/Divider";
 import EditIcon from "@mui/icons-material/Edit";
 import EditProjectModal from "./EditProjectModal";
@@ -39,28 +38,8 @@ const ProjectCard = ({
   }, time);
   const [deleteProject] = useDeletePersonalProjectMutation();
   const [deleteTeamProject] = useDeleteTeamProjectMutation();
-  const cardColor = () => {
-    if (project.status === "pending") {
-      return deepOrange[50];
-    }
-    if (project.status === "in progress") {
-      return blue[100];
-    }
-    if (project.status === "complete") {
-      return green[100];
-    }
-  };
-  const deeperColor = () => {
-    if (project.status === "pending") {
-      return deepOrange[500];
-    }
-    if (project.status === "in progress") {
-      return blue[300];
-    }
-    if (project.status === "complete") {
-      return green[300];
-    }
-  };
+
+
   const navigate = useNavigate();
 
   const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {

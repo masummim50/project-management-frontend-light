@@ -7,22 +7,19 @@ import {
   InputAdornment,
   Paper,
   TextField,
-  ThemeProvider,
   Typography,
 } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useLazySearchUsersQuery } from "../../redux/features/user/userApi";
 import { participantType, projectType } from "./project.interface";
-import { blueGrey } from "@mui/material/colors";
+
 import { useLocation } from "react-router-dom";
 import { useAddMemberToProjectMutation } from "../../redux/features/project/project.api";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ProjectMembers from "./ProjectMembers";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { formColor } from "../../lib/muiFormColor";
 import { LoadingButton } from "@mui/lab";
-import { whiteInputTheme } from "../TestingPage";
 
 export const formStyle = (
   labelFocusedColor: string,

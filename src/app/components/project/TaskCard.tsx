@@ -9,7 +9,7 @@ import {
   TextField,
   ButtonGroup,
   LinearProgress,
-  ThemeProvider,
+  
 } from "@mui/material";
 import { taskType } from "./project.interface";
 import { orange, blue, blueGrey, green } from "@mui/material/colors";
@@ -44,7 +44,6 @@ import { RootState } from "../../redux/store";
 import AssignTaskModal from "./AssignTaskModal";
 import TaskStatus from "./TaskStatus";
 import MemberNameCard from "./MemberNameCard";
-import { whiteInputTheme } from "../TestingPage";
 import { LoadingButton } from "@mui/lab";
 import { AddCircleOutline } from "@mui/icons-material";
 import SpentTime from "./SpentTime";

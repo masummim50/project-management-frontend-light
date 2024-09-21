@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, TextField, ThemeProvider } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 import { useCreateTodoMutation } from "../../redux/features/todo/todo.api";
 import Box from "@mui/material/Box";
@@ -7,8 +7,6 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { lightBlue, deepOrange, red } from "@mui/material/colors";
 import { LoadingButton } from "@mui/lab";
-import { whiteInput } from "../../lib/muiFormColor";
-import { whiteInputTheme } from "../../components/TestingPage";
 import { getCurrentTimeString } from "../../lib/dateFunctions";
 
 const TodoForm = () => {

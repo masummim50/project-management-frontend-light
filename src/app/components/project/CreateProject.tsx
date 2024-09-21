@@ -9,10 +9,7 @@ import {
   useCreatePersonalProjectMutation,
   useCreateTeamProjectMutation,
 } from "../../redux/features/project/project.api";
-import { formColor } from "../../lib/muiFormColor";
-import { blueGrey } from "@mui/material/colors";
-import { ThemeProvider } from "@emotion/react";
-import { whiteInputTheme } from '../TestingPage';
+
 import { getCurrentTimeString } from "../../lib/dateFunctions";
 
 const blue = {

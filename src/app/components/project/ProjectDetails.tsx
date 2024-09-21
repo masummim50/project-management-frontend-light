@@ -9,7 +9,6 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ProjectTasks from "./ProjectTasks";
 
-import { blueGrey } from "@mui/material/colors";
 import { useGetPersonalProjectByIdQuery } from "../../redux/features/project/project.api";
 import AddMember from "./AddMember";
 import ProjectDetailsLoading from "../loadingSkeletons/ProjectDetailsLoading";
