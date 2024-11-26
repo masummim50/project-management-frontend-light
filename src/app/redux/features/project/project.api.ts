@@ -170,10 +170,12 @@ export const projectApi = apiSlice.injectEndpoints({
 export const {
   useCreatePersonalProjectMutation,
   useGetPersonalProjectsQuery,
+  useLazyGetPersonalProjectsQuery,
   useDeletePersonalProjectMutation,
   useGetPersonalProjectByIdQuery,
   useUpdatePersonalProjectByIdMutation,
   useGetTeamProjectsQuery,
+  useLazyGetTeamProjectsQuery,
   useCreateTeamProjectMutation,
   useAddMemberToProjectMutation,
   useGetMembersByProjectIdQuery,

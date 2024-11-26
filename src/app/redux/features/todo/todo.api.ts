@@ -12,6 +12,7 @@ export const todoApi = apiSlice.injectEndpoints({
       }),
       providesTags: ["todos"],
     }),
+    
     deleteAllCompletedTodos: builder.mutation({
       query: () => ({
         method: "DELETE",
@@ -115,6 +116,7 @@ export const todoApi = apiSlice.injectEndpoints({
 
 export const {
   useGetTodosQuery,
+  useLazyGetTodosQuery,
   useCreateTodoMutation,
   useCompleteTodoMutation,
   useDeleteTodoMutation,

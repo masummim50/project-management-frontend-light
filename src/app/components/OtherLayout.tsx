@@ -29,6 +29,8 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { removeUser } from "../redux/features/user/userSlice";
 import { red, blueGrey } from "@mui/material/colors";
 import MenuBookIcon from "@mui/icons-material/MenuBook";
+import { useLazyGetTodosQuery } from "../redux/features/todo/todo.api";
+import { useLazyGetPersonalProjectsQuery, useLazyGetTeamProjectsQuery } from "../redux/features/project/project.api";
 // import ContactPageIcon from '@mui/icons-material/ContactPage';
 const drawerWidth = 240;
 const openWidth = 1000;
@@ -122,6 +124,14 @@ const links = [
 const settings = ["LogOut"];
 
 export default function OtherLayout() {
+
+  // data fetch functions
+  const [triggerQuery] = useLazyGetTodosQuery(undefined);
+  const [triggerPersonalProjectQuery] = useLazyGetPersonalProjectsQuery(undefined);
+  const [triggerTeamProjectQuery] = useLazyGetTeamProjectsQuery(undefined)
+
+
+
   const user = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const handleLogout = () => {
@@ -266,23 +276,14 @@ export default function OtherLayout() {
             // padding: "5px 5px",
             flexDirection: "column",
             gap: 1,
-            // "&& .Mui-selected, && .Mui-selected:hover": {
-            //   bgcolor: blueGrey[900],
-            //   "&, & .MuiListItemIcon-root": {
-            //     color: "white",
-            //   },
-            // },
-            // hover states
-            // '& .MuiListItemButton-root:hover': {
-            //   bgcolor: 'orange',
-            //   '&, & .MuiListItemIcon-root': {
-            //     color: 'yellow',
-            //   },
-            // },
+
           }}
         >
           {links.map((link, index) => (
             <Link
+              onMouseEnter={() => {
+                link.title === 'Todos' ? triggerQuery(undefined, true) : link.title === 'Personal Projects' ? triggerPersonalProjectQuery(undefined, true) : link.title === 'Team Projects' ? triggerTeamProjectQuery(undefined, true) : console.log('hovered hover nothing')
+            }}
               onClick={() => {
                 link.logout ? handleLogout() : null;
               }}
