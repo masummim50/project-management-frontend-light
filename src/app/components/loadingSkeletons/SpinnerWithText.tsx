@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './spinner.css'
 
 export const SpinnerWithText = ({ height, text }: { height: number, text: string }) => {
