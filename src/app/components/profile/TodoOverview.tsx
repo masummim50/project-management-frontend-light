@@ -6,49 +6,37 @@ import { useGetLastTodosQuery } from "../../redux/features/todo/todo.api";
 import { formatDataArray } from "../../lib/dateFunctions";
 import { Box, Button, Skeleton, Typography } from "@mui/material";
 import { blue } from "@mui/material/colors";
+import { SpinnerWithText } from "../loadingSkeletons/SpinnerWithText";
 
 const TodoOverview = ({
-  showRandom,
-  setShowRandom,
+  
+  isLoading,
+  dates,
+  values,
 }: {
-  showRandom: boolean;
-  setShowRandom: Dispatch<SetStateAction<boolean>>;
+  isLoading:boolean;
+  dates:any;
+  values:any;
 }) => {
-  const { data, isLoading } = useGetLastTodosQuery(undefined);
 
-  const [dates, setDates] = useState<string[]>([]);
-  const [values, setValues] = useState<number[]>([]);
-  const [randomValue] = useState<number[]>(() =>
-    Array.from({ length: 30 }, () => Math.floor(Math.random() * 21))
-  );
+  
+  
 
-  useEffect(() => {
-    if (data?.data?.lastdays) {
-      const { dates, values } = formatDataArray(data?.data?.lastdays);
 
-      setDates(dates);
-      if (showRandom) {
-        setValues(randomValue);
-      } else {
-        setValues(values);
-      }
-    }
-  }, [data, showRandom]);
 
   return (
     <div>
-      <Typography>Todo Overview:</Typography>
-      <Typography fontSize={13}>last 30 days:</Typography>
-      <Button
-        variant="contained"
-        size="small"
-        onClick={() => setShowRandom(!showRandom)}
-      >
-        {showRandom ? "Show real data" : "Show fake data"}
-      </Button>
-      <Box>{isLoading && <Skeleton sx={{ margin: 0 }} height={400} />}</Box>
+      
+      
+      {/* <Box>{isLoading && <Skeleton sx={{ margin: 0 }} height={200} />}</Box> */}
+
+      {
+        isLoading && <SpinnerWithText height={300} text="Loading todo overview" />
+      }
+
       {dates.length > 0 && (
         <>
+        <Typography fontSize={13}>last 30 days Todo Overview</Typography>
           <BarChart
             // colors={[green[500]]}
             xAxis={[

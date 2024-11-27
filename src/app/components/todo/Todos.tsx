@@ -9,6 +9,7 @@ const Todos = () => {
   return (
     <div>
       <TodoForm />
+      <div style={{display:'flex', justifyContent:'center', color:'red', fontSize:'12px', marginBottom:'10px'}}>Drag and Drop todo from one section to another</div>
       <TodoContainer />
     </div>
   );
